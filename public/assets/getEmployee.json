@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "firstName": "Sachin",
+      "lastName": "Tendulkar",
+      "departments": "Sales",
+      "departmentId": "1",
+      "gender": "Male",
+      "email": "saching@mail.com",
+      "phoneNumber": "101008030"
+    },
+    {
+      "firstName": "Sachin",
+      "lastName": "Tendulkar",
+      "departments": "Sales",
+      "departmentId": "1",
+      "gender": "Male",
+      "email": "saching@mail.com",
+      "phoneNumber": "101008030"
+    },
+    {
+      "firstName": "Sachin",
+      "lastName": "Tendulkar",
+      "departments": "Sales",
+      "departmentId": "2",
+      "gender": "Male",
+      "email": "saching@mail.com",
+      "phoneNumber": "101008030"
+    },
+    {
+      "firstName": "Sachin",
+      "lastName": "Tendulkar",
+      "departments": "Sales",
+      "departmentId": "3",
+      "gender": "Male",
+      "email": "saching@mail.com",
+      "phoneNumber": "101008030"
+    },
+    {
+      "firstName": "Sachin",
+      "lastName": "Tendulkar",
+      "departments": "Sales",
+      "departmentId": "4",
+      "gender": "Male",
+      "email": "saching@mail.com",
+      "phoneNumber": "101008030"
+    }
+  ]
+}
