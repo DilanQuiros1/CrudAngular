@@ -26,11 +26,11 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody *ngFor="let ep of employee; let sr = index">
+          <tbody *ngFor="let ep of employee">
             <tr>
-              <td>{{ sr + 1 }}</td>
+              <td>{{ ep.id }}</td>
               <td>{{ ep.firstName }}</td>
-              <td>{{ ep.departments }}</td>
+              <td>{{ ep.departmentId }}</td>
               <td>{{ ep.email }}</td>
               <td>
                 <button class="btn btn-sm btn-primary" (click)="onEdit(ep)">

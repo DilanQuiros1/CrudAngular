@@ -16,7 +16,6 @@ export class EmployeeRegistrationComponent implements OnInit {
     id: '',
     firstName: '',
     lastName: '',
-    departments: '',
     departmentId: '',
     gender: '',
     email: '',
@@ -25,6 +24,7 @@ export class EmployeeRegistrationComponent implements OnInit {
 
   constructor(private http: HttpClient, private userService: UserService) {
     this.LoadEmployees();
+    this.getUsers();
   }
   ngOnInit(): void {}
 
@@ -38,6 +38,12 @@ export class EmployeeRegistrationComponent implements OnInit {
     this.userService.addUser(this.employeeObject).subscribe((res: any) => {
       console.log('Usuario añadido:', res);
       // puedes resetear el formulario aquí si quieres
+    });
+  }
+
+  getUsers() {
+    this.userService.getUsers().subscribe((res: any) => {
+      this.employee = res;
     });
   }
   onSubmit1() {

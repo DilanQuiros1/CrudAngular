@@ -1,73 +1,21 @@
 {
   "data": [
     {
-      "id:": 0,
-      "firstName": "Sachin",
-      "lastName": "Tendulkar",
-      "departments": "Sales",
-      "departmentId": "1",
-      "gender": "Male",
-      "email": "saching@mail.com",
-      "phoneNumber": "101008030"
-    },
-    {
-      "id:": 1,
-      "firstName": "Sachin1",
-      "lastName": "Tendulkar",
-      "departments": "Sales",
-      "departmentId": "1",
-      "gender": "Male",
-      "email": "saching@mail.com",
-      "phoneNumber": "101008030"
-    },
-    {
-      "id:": 2,
-      "firstName": "Sachin2",
-      "lastName": "Tendulkar",
-      "departments": "Sales",
-      "departmentId": "2",
-      "gender": "Male",
-      "email": "saching@mail.com",
-      "phoneNumber": "101008030"
-    },
-    {
-      "id:": 3,
-      "firstName": "Sachin3",
-      "lastName": "Tendulkar",
-      "departments": "Sales",
-      "departmentId": "3",
-      "gender": "Male",
-      "email": "saching@mail.com",
-      "phoneNumber": "101008030"
-    },
-    {
-      "id:": 4,
-      "firstName": "Sachin4",
-      "lastName": "Tendulkar",
-      "departments": "Sales",
-      "departmentId": "4",
-      "gender": "Male",
-      "email": "saching@mail.com",
-      "phoneNumber": "101008030"
-    },
-    {
-      "id": 10,
-      "firstName": "",
-      "lastName": "",
-      "departments": "",
-      "departmentId": "",
-      "gender": "",
-      "email": "",
-      "phoneNumber": ""
-    },
-    {
       "id": "100",
       "firstName": "nom1",
       "lastName": "Dilan Rodrigo Quiros",
-      "departments": "",
       "departmentId": "choose",
       "gender": "Male",
       "email": "quiroschinchilladilan@gmail.com",
+      "phoneNumber": "71715494"
+    },
+    {
+      "id": "1",
+      "firstName": "Nom1",
+      "lastName": "Dilan Rodrigo Quiros",
+      "departmentId": "choose",
+      "gender": "Male",
+      "email": "mail@correo",
       "phoneNumber": "71715494"
     }
   ]
