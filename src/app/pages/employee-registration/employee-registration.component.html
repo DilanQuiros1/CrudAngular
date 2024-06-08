@@ -2,204 +2,224 @@
   <div class="container py-5 h-100">
     <div class="row">
       <div class="col-12">
-        <button
-          class="btn btn-sm btn-success"
-          (click)="isListView = !isListView"
-        >
+        <button class="btn btn-sm btn-success" (click)="toggleButton()">
           {{ isListView ? "New" : "List" }}
         </button>
       </div>
     </div>
-
-    <div
-      *ngIf="isListView"
-      class="row justify-content-center align-items-center h-100"
-    >
-      <div class="col-12">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Sr No</th>
-              <th>Name</th>
-              <th>Department</th>
-              <th>Email</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody *ngFor="let ep of employee">
-            <tr>
-              <td>{{ ep.id }}</td>
-              <td>{{ ep.firstName }}</td>
-              <td>{{ ep.departmentId }}</td>
-              <td>{{ ep.email }}</td>
-              <td>
-                <button class="btn btn-sm btn-primary" (click)="onEdit(ep)">
-                  Edit
-                </button>
-              </td>
-              <td><button class="btn btn-sm btn-danger">Delete</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div
-      *ngIf="!isListView"
-      class="row justify-content-center align-items-center h-100"
-    >
-      <div class="col-12 col-lg-9 col-xl-7">
-        <div
-          class="card shadow-2-strong card-registration"
-          style="border-radius: 15px"
-        >
-          <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-            <form (ngSubmit)="onSubmit()">
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div data-mdb-input-init class="form-outline">
-                    <input
-                      type="text"
-                      [(ngModel)]="employeeObject.id"
-                      id="id"
-                      name="id"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="firstName">ID</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div data-mdb-input-init class="form-outline">
-                    <input
-                      type="text"
-                      [(ngModel)]="employeeObject.firstName"
-                      id="firstName"
-                      name="frname"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="firstName">First Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div data-mdb-input-init class="form-outline">
-                    <input
-                      type="text"
-                      id="lastName"
-                      [(ngModel)]="employeeObject.lastName"
-                      name="name"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="firstName"
-                      >Second Name</label
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-                  <label class="form-label" for="lastName">Department1</label>
-                  <div
-                    data-mdb-input-init
-                    class="form-outline datepicker w-100"
+    <div class="container py-5 h-10">
+      <div
+        *ngIf="isListView"
+        class="row justify-content-center align-items-center h-100"
+      >
+        <div class="col-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let ep of employee">
+              <tr>
+                <td>{{ ep.id }}</td>
+                <td>{{ ep.firstName }}</td>
+                <td>{{ ep.departmentId }}</td>
+                <td>{{ ep.email }}</td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-primary"
+                    (click)="editButton(ep.id)"
                   >
-                    <select
-                      [(ngModel)]="employeeObject.departmentId"
-                      name="departmentid"
-                      class="select form-control-lg"
-                    >
-                      <option value="choose">Department1</option>
-                      <option value="choose">Department2</option>
-                      <option value="choose">Department3</option>
-                    </select>
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-danger"
+                    (click)="deleteUser(ep.id)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        *ngIf="!isListView"
+        class="row justify-content-center align-items-center h-100"
+      >
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div
+            class="card shadow-2-strong card-registration"
+            style="border-radius: 15px"
+          >
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="text"
+                        [(ngModel)]="employeeObject.id"
+                        id="id"
+                        name="id"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="firstName">ID</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="text"
+                        [(ngModel)]="employeeObject.firstName"
+                        id="firstName"
+                        name="frname"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="firstName"
+                        >First Name</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="text"
+                        id="lastName"
+                        [(ngModel)]="employeeObject.lastName"
+                        name="name"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="firstName"
+                        >Second Name</label
+                      >
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                  <h6 class="mb-2 pb-1">Gender:</h6>
 
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      [(ngModel)]="employeeObject.gender"
-                      name="gender"
-                      id="femaleGender"
-                      value="Female"
-                      checked
-                    />
-                    <label class="form-check-label" for="femaleGender"
-                      >Female</label
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+                    <label class="form-label" for="lastName">Department1</label>
+                    <div
+                      data-mdb-input-init
+                      class="form-outline datepicker w-100"
                     >
+                      <select
+                        [(ngModel)]="employeeObject.departmentId"
+                        name="departmentid"
+                        class="select form-control-lg"
+                      >
+                        <option value="choose">Department1</option>
+                        <option value="choose">Department2</option>
+                        <option value="choose">Department3</option>
+                      </select>
+                    </div>
                   </div>
+                  <div class="col-md-6 mb-4">
+                    <h6 class="mb-2 pb-1">Gender:</h6>
 
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      [(ngModel)]="employeeObject.gender"
-                      name="gender"
-                      id="maleGender"
-                      value="Male"
-                    />
-                    <label class="form-check-label" for="maleGender"
-                      >Male</label
-                    >
-                  </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        [(ngModel)]="employeeObject.gender"
+                        name="gender"
+                        id="femaleGender"
+                        value="Female"
+                        checked
+                      />
+                      <label class="form-check-label" for="femaleGender"
+                        >Female</label
+                      >
+                    </div>
 
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="otherGender"
-                      value="option3"
-                    />
-                    <label class="form-check-label" for="otherGender"
-                      >Other</label
-                    >
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        [(ngModel)]="employeeObject.gender"
+                        name="gender"
+                        id="maleGender"
+                        value="Male"
+                      />
+                      <label class="form-check-label" for="maleGender"
+                        >Male</label
+                      >
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="otherGender"
+                        value="option3"
+                      />
+                      <label class="form-check-label" for="otherGender"
+                        >Other</label
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-                  <div data-mdb-input-init class="form-outline">
-                    <input
-                      type="email"
-                      [(ngModel)]="employeeObject.email"
-                      id="emailAddress"
-                      name="email"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="emailAddress">Email</label>
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="email"
+                        [(ngModel)]="employeeObject.email"
+                        id="emailAddress"
+                        name="email"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="emailAddress">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="tel"
+                        [(ngModel)]="employeeObject.phoneNumber"
+                        id="phoneNumber"
+                        name="phone"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="phoneNumber"
+                        >Phone Number</label
+                      >
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 mb-4 pb-2">
-                  <div data-mdb-input-init class="form-outline">
-                    <input
-                      type="tel"
-                      [(ngModel)]="employeeObject.phoneNumber"
-                      id="phoneNumber"
-                      name="phone"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="phoneNumber"
-                      >Phone Number</label
-                    >
-                  </div>
-                </div>
-              </div>
 
-              <div class="mt-4 pt-2">
-                <input
-                  data-mdb-ripple-init
-                  class="btn btn-primary btn-lg"
-                  type="submit"
-                  value="Submit"
-                />
-              </div>
-            </form>
+                <div
+                  class="mt-4 pt-2 d-flex b-flex-colum justify-content-center"
+                >
+                  <input
+                    data-mdb-ripple-init
+                    class="btn btn-primary btn-lg"
+                    type="submit"
+                    value="Submit"
+                  />
+                  <button
+                    type="button"
+                    *ngIf="isEditing"
+                    (click)="onEdit()"
+                    class="btn btn-danger ms-3"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

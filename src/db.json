@@ -8,15 +8,6 @@
       "gender": "Male",
       "email": "quiroschinchilladilan@gmail.com",
       "phoneNumber": "71715494"
-    },
-    {
-      "id": "1",
-      "firstName": "Nom1",
-      "lastName": "Dilan Rodrigo Quiros",
-      "departmentId": "choose",
-      "gender": "Male",
-      "email": "mail@correo",
-      "phoneNumber": "71715494"
     }
   ]
 }
